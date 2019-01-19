@@ -8,10 +8,15 @@
 class AUnit {
 
 private:
-	int _hp;
+	int _hp; 
+	int _speed;
+	AEvent *event;
 
 public:
-	virtual ~AUnit() {}
+	virtual ~AUnit() {} 
+	AUnit(int hp, int speed);
+	nt getHP() const;
+virtual int getSpeed() const; virtual 
 
 };
 
