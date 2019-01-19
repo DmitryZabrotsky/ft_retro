@@ -15,9 +15,10 @@ private:
 public:
 	virtual ~AUnit() {} 
 	AUnit(int hp, int speed);
-	nt getHP() const;
-virtual int getSpeed() const; virtual 
-
+	int getHP() const;
+ int getSpeed() const; 
+	void setSpeed(int speed); 
+	void setHP(int hp);
 };
 
 #endif AUNIT_HPP
