@@ -3,3 +3,15 @@
 //
 
 #include "Bullet.hpp"
+
+Bullet::Bullet() {
+
+}
+
+Bullet::Bullet(Bullet const &obj) {
+
+}
+
+Bullet& Bullet::operator=(Bullet const *obj) {
+
+}

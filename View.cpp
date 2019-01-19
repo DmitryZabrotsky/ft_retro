@@ -3,3 +3,19 @@
 //
 
 #include "View.hpp"
+
+View::View() {
+
+}
+
+View::View(View const &obj) {
+
+}
+
+View::~View() {
+
+}
+
+View &View::operator=(View const &obj) {
+	return <#initializer#>;
+}

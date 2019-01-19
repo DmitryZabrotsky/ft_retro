@@ -3,3 +3,19 @@
 //
 
 #include "Control.hpp"
+
+Control::Control() {
+
+}
+
+Control::Control(Control const &obj) {
+
+}
+
+Control::~Control() {
+
+}
+
+Control &Control::operator=(Control const &obj) {
+	return <#initializer#>;
+}

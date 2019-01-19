@@ -15,7 +15,7 @@ private:
 	int		_color;
 	char	_symbol;
 
-private:
+public:
 	Entry();
 	Entry(Entry const &obj);
 	~Entry();

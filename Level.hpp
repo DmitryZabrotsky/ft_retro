@@ -5,8 +5,18 @@
 #ifndef LEVEL_HPP
 #define LEVEL_HPP
 
+#include <iostream>
 
 class Level {
+
+private:
+
+public:
+	Level();
+	Level(Level const &obj);
+	~Level();
+
+	Level &operator=(Level const &obj);
 
 };
 

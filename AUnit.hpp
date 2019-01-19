@@ -7,6 +7,12 @@
 
 class AUnit {
 
+private:
+	int _hp;
+
+public:
+	virtual ~AUnit() {}
+
 };
 
 #endif AUNIT_HPP
