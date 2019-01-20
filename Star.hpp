@@ -11,11 +11,13 @@
 class Star : public AUnit {
 
 private:
+	const int __i_len = 1;
+	const int __i_hight = 1;
+	const char __img[1][1] = {{'.'}};
 
 public:
 	Star();
-
-	void appear(int x, int y) override;
+	void appear(Map const &map) override;
 	void beahavior(Map const &map) override;
 	void play(Map const &map) override;
 

@@ -14,7 +14,7 @@ private:
 	int _speed;
 	int _x = -1;
 	int _y = -1;
-	Map &_imj;
+	Map *_imj;
 	AUnit();
 
 public:
@@ -28,10 +28,11 @@ public:
 	int getY() const;
 	void setX(int x);
 	void setY(int y);
-	Map &getImj();
-	Map &getImj() const;
+	Map *getImj() const;
 
-	virtual void appear(int x, int y) = 0;
+	void set_imj(Map *_imj);
+
+	virtual void appear(Map const &map) = 0;
 	virtual void beahavior(Map const &map) = 0;
 	virtual void play(Map const &map) = 0;
 };

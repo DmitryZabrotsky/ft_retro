@@ -4,11 +4,12 @@
 
 #include "AUnit.hpp"
 
-AUnit::AUnit() {}
+AUnit::AUnit() {
+}
 
 
 AUnit::AUnit(int hp, int speed): _hp(hp), _speed(speed) {
-    imj = Map();
+    _imj = nullptr;
 }
 
 int AUnit::getHP() const {
@@ -27,11 +28,11 @@ void AUnit::setHP(int hp) {
     _hp = hp;
 }
 
-int AUnit::getX() {
+int AUnit::getX() const {
     return _x;
 }
 
-int AUnit::getY() {
+int AUnit::getY() const {
     return _y;
 }
 
@@ -43,6 +44,11 @@ void AUnit::setY(int y) {
     _y = y;
 }
 
-Map &AUnit::getImj() {
-    return _imj;
+Map *AUnit::getImj() const {
+    return nullptr;
 }
+
+void AUnit::set_imj(Map *_imj) {
+    AUnit::_imj = _imj;
+}
+
