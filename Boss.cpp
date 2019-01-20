@@ -24,7 +24,6 @@ char const Boss :: __img[3][11] = {{' ', '/', '\\', '*', '*', '/', '\\', '.', ' 
  	beahavior(map);
 	 for (int i = 0; i < 50; i++)
 		 bullets[i].play(map);
-	 collision(map);
 	 for (int i = 0; i < 50; i++)
 		 bullets[i].collision(map);
  }

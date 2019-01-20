@@ -87,3 +87,15 @@ AUnit *Map::getOwner(int x, int y) const {
 		return nullptr;
 }
 
+void Map::clear() {
+    for (int i = 0; i < _y; i++)
+    {
+        for (int j = 0; j < _x; j++)
+        {
+            setColor(j, i, 1);
+            setSymbol(j, i, ' ');
+            setOwner(j, i, nullptr);
+        }
+    }
+}
+

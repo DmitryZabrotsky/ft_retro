@@ -33,9 +33,9 @@ Model &Model::operator=(Model const &onj) {
 }
 
 void Model::simulation() {
+    Map map = Map(_view->get_x_wmax(), _view->get_y_wmax());
 	while (42) {
-		Map map = Map(_view->get_x_wmax(), _view->get_y_wmax());
-		 // Map map = Map(20, 20);
+		map.clear();
 		_background->play(map);
 		_background->mapping(map);
 		_totalScore = _level->getScore();
