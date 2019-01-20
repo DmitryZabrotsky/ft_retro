@@ -40,6 +40,7 @@ public:
 
 	void		gameover();
 
+	void victory();
 };
 
 

@@ -66,3 +66,7 @@ int Level::getScore() {
 bool Level::isOver() {
 	return (getScore() > 12);
 }
+
+bool Level::ifVictory() {
+    return boss->getHP() <= 0;
+}

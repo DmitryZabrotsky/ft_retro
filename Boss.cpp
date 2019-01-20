@@ -4,6 +4,8 @@ char const Boss :: __img[3][11] = {{' ', '/', '\\', '*', '*', '/', '\\', '.', ' 
 
 
  void Boss::appear(Map const &map) {
+     if (getHP() <= 0)
+         return;
  	setX(rand() % map.getX());
  	setY(0);
 	 for (int i = 0; i < 50; i++)
@@ -11,6 +13,10 @@ char const Boss :: __img[3][11] = {{' ', '/', '\\', '*', '*', '/', '\\', '.', ' 
  }
 
  void Boss::beahavior(Map const &map) {
+     if (getHP() <= 0){
+         setX(-1);
+         setY(-1);
+     }
  	if (getY() < 0 || getX() < 0)
 		return;
  	if (getX() + getSpeed() <= 0 || getX() + getSpeed() + getImj()->getX() > map.getX())
@@ -29,7 +35,7 @@ char const Boss :: __img[3][11] = {{' ', '/', '\\', '*', '*', '/', '\\', '.', ' 
  }
 
 
-Boss::Boss(): AUnit(4, 0.2, 2) {
+Boss::Boss(): AUnit(8, 0.2, 0) {
 	Map *imj = new Map(__i_len, __i_hight);
 	for (int i = 0; i < __i_hight; i++)
 	{

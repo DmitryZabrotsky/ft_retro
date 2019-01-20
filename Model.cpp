@@ -36,6 +36,11 @@ void Model::simulation() {
     Map map = Map(_view->get_x_wmax(), _view->get_y_wmax());
 	while (42) {
 		map.clear();
+		if (_level->ifVictory())
+		{
+			_view->victory();
+			_control->gameover();
+		}
 		_background->play(map);
 		_background->mapping(map);
 		_totalScore = _level->getScore();

@@ -31,6 +31,7 @@ public:
     int getScore();
 
     bool isOver();
+    bool ifVictory();
 };
 
 

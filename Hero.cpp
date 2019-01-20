@@ -7,7 +7,7 @@
 char const Hero :: __img[2][5] = {{'/','_', '|','_','\\'},
                                   {'\\','_','|','_','/'}};
 
-Hero::Hero(): AUnit(6, 2, 4){
+Hero::Hero(): AUnit(9, 2, 6){
     Map *imj = new Map(__i_len, __i_hight);
     for (int i = 0; i < __i_hight; i++)
     {
