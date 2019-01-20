@@ -16,17 +16,17 @@ Map::Map(Map const &obj) {
 }
 
 Map &Map::operator=(Map const &obj) {
-	for (int i = 0; i < _y; i++)
-		delete _map[i];
-	delete _map;
+//	for (int i = 0; i < _y; i++)
+//		delete _map[i];
+//	delete _map;
 	this->_x = obj._x;
 	this->_y = obj._y;
-	_map = new Entry*[_y];
-	for (int i = 0; i < _y; i++) {
-		_map[i] = new Entry[_x]();
-		for (int j = 0; j < _y; j++)
-			_map[i][j] = obj._map[i][j];
-	}
+//	_map = new Entry*[_y];
+//	for (int i = 0; i < _y; i++) {
+//		_map[i] = new Entry[_x]();
+//		for (int j = 0; j < _y; j++)
+//			_map[i][j] = obj._map[i][j];
+//	}
 	return (*this);
 }
 
@@ -67,5 +67,17 @@ void Map::setColor(int x, int y, int color) {
 void Map::setOwner(int x, int y, AUnit *owner) {
 	if (x >= 0 && x < _x && y >= 0 && y < _y)
 		_map[y][x].set_owner(owner);
+}
+
+char Map::getSymbol(int x, int y) const {
+	return _map[y][x].get_symbol();
+}
+
+int Map::getColor(int x, int y) const {
+	return _map[y][x].get_color();
+}
+
+AUnit *Map::getOwner(int x, int y) const {
+	return _map[y][x].get_owner();
 }
 
