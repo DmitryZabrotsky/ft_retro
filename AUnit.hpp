@@ -14,12 +14,13 @@ private:
 	int _speed;
 	int _x;
 	int _y;
+	int _damage;
 	Map *_imj;
 	AUnit();
 
 public:
 	virtual ~AUnit() {} 
-	AUnit(int hp, int speed);
+	AUnit(int hp, int speed, int damage);
 	int getHP() const;
  	int getSpeed() const;
 	void setSpeed(int speed); 
@@ -29,12 +30,15 @@ public:
 	void setX(int x);
 	void setY(int y);
 	Map *getImj() const;
+	int get_damage() const;
+	void set_damage(int _damage);
 
 	void set_imj(Map *_imj);
 
 	virtual void appear(Map const &map) = 0;
 	virtual void beahavior(Map const &map) = 0;
-//	virtual void collision(Map const &map) = 0;
+	virtual void collision(Map const &map) = 0;
+	virtual void damage(AUnit *unit) = 0;
 	virtual void play(Map const &map) = 0;
 };
 

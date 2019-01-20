@@ -8,7 +8,7 @@ AUnit::AUnit() {
 }
 
 
-AUnit::AUnit(int hp, int speed): _hp(hp), _speed(speed) {
+AUnit::AUnit(int hp, int speed, int damage): _hp(hp), _speed(speed), _damage(damage) {
     _x = -1;
     _y = -1;
     _imj = nullptr;
@@ -52,5 +52,13 @@ Map *AUnit::getImj() const {
 
 void AUnit::set_imj(Map *_imj) {
     AUnit::_imj = _imj;
+}
+
+int AUnit::get_damage() const {
+    return _damage;
+}
+
+void AUnit::set_damage(int _damage) {
+    AUnit::_damage = _damage;
 }
 
