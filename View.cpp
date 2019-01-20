@@ -70,6 +70,7 @@ void	View::draw_panel()
 	if ( _model != nullptr && _model->getHero()!= nullptr)
 	{
 			//mvwprintw(_win, 2, this->x_wmax - 14, "****TEST**");
+		mvwprintw(_win, 1, this->x_wmax - 14,"%d", _model->_totalScore);
 
 		mvwprintw(_win, 2, this->x_wmax - 14,"HP: %d", _model->getHero()->getHP());
 	}
