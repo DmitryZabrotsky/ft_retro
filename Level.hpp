@@ -24,6 +24,9 @@ public:
 	void 	mapping(Map &obj);
 	void 	play(Map const&map);
 
+    int getScore();
+
+    bool isOver();
 };
 
 

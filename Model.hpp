@@ -19,6 +19,7 @@ private:
 	Control *_control;
 	View *_view;
 	Hero *_hero;
+	int _heroHP;
 	Background _background;
 	Level _level;
 

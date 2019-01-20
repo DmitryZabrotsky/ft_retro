@@ -8,10 +8,11 @@
 #include "Map.hpp"
 
 class IScenario {
-
 public:
-	// virtual void mapping(Map &obj) = 0;
-	// virtual void play (Map &obj) = 0;
+	 virtual void mapping(Map &obj) = 0;
+	 virtual void play (Map const &obj) = 0;
+	 virtual int getScore() = 0;
+	 virtual bool isOver() = 0;
 
 };
 

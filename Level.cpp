@@ -48,3 +48,16 @@ void Level::play(Map const&map){
 	    for (int i = 0; i < 20; i++)
      		enemies[i].play(map);
 }
+
+int Level::getScore() {
+	int score = 0;
+	for (int i = 0; i < 20; i++) {
+		if (enemies[i].getHP() <= 0)
+			score++;
+	}
+	return score;
+}
+
+bool Level::isOver() {
+	return (getScore() > 12);
+}

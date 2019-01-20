@@ -34,3 +34,11 @@ void Background::play(Map const &map) {
     for (int i = 0; i < 200; i++)
         stars[i].play(map);
 }
+
+int Background::getScore() {
+	return 0;
+}
+
+bool Background::isOver() {
+	return false;
+}
