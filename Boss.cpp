@@ -11,12 +11,12 @@ char const Boss :: __img[3][11] = {{' ', '/', '\\', '*', '*', '/', '\\', '.', ' 
  }
 
  void Boss::beahavior(Map const &map) {
- 	int heroX = getHeroX(map);
- 	if (heroX < getX())
- 		setX(getX() - getSpeed());
- 	else
- 		setX(getX() + getSpeed());
- 	if (rand() % 50 == 4)
+ 	if (getY() < 0 || getX() < 0)
+		return;
+ 	if (getX() + getSpeed() <= 0 || getX() + getSpeed() + getImj()->getX() > map.getX())
+ 		setSpeed(getSpeed() * -1);
+ 	setX(getX() + getSpeed());
+ 	if (rand() % 100 == 4)
  		shot();
  }
 
@@ -30,7 +30,7 @@ char const Boss :: __img[3][11] = {{' ', '/', '\\', '*', '*', '/', '\\', '.', ' 
  }
 
 
-Boss::Boss(): AUnit(1, 0.1, 2) {
+Boss::Boss(): AUnit(4, 0.2, 2) {
 	Map *imj = new Map(__i_len, __i_hight);
 	for (int i = 0; i < __i_hight; i++)
 	{
@@ -56,20 +56,6 @@ Boss::Boss(): AUnit(1, 0.1, 2) {
 
 // {'(', ' ', 'o', '_', 'o', ' ', ' ', ')', '_', ')', ' '}
 // {',', '(', 'u', ' ', ' ', 'u', ' ', ' ', ',', ')', ','}
-int Boss::getHeroX(Map const& map) {
- 	for (int i = 0; i < map.getY(); i++) {
- 		for (int j = 0; j < map.getX(); j++)
-		{
- 			AUnit *owner = map.getOwner(j, i);
- 			if (owner != nullptr) {
-				Hero *hero = dynamic_cast<Hero *>(owner);
-				if (hero != nullptr)
-					return j;
-			}
-		}
- 	}
-	return -1;
-}
 
 void Boss::shot() {
 	for (int i = 0; i < 50; i++)

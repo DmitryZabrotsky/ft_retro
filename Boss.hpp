@@ -8,12 +8,11 @@
 class Boss : public AUnit{
 
 private:
-	static const int __i_len = 8;
-	static const int __i_hight = 1;
+	static const int __i_len = 11;
+	static const int __i_hight = 3;
 	static const char __img[3][11];
 
 	Bullet bullets[50];
-	int getHeroX(Map const& map);
 	void shot();
 
 public:

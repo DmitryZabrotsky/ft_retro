@@ -17,6 +17,7 @@ class Level : public IScenario {
 private:
 	Enemy enemies[20];
 	Heal heals[4];
+	Boss *boss;
 
 public:
 	Level();

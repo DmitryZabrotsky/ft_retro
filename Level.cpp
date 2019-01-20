@@ -5,7 +5,7 @@
 #include "Level.hpp"
 
 Level::Level() {
-
+	boss = new Boss();
 }
 
 Level::Level(Level const &obj) {
@@ -13,7 +13,7 @@ Level::Level(Level const &obj) {
 }
 
 Level::~Level() {
-
+	delete(boss);
 }
 
 Level& Level::operator=(Level const &obj) {
@@ -40,6 +40,7 @@ void Level::mapping(Map &map)
 			map.add(img, x, y);
 		}
 	}
+	boss->mapping(map);
 }
 
 
@@ -48,6 +49,9 @@ void Level::play(Map const&map){
      		enemies[i].play(map);
 	    for (int i = 0; i < 4; i++)
 			heals[i].play(map);
+	    if (isOver() && boss->getX() < 0)
+	    	boss->appear(map);
+	    boss->play(map);
 }
 
 int Level::getScore() {
