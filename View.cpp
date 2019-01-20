@@ -32,7 +32,7 @@ View::View() {
 	init_pair(33, COLOR_BLACK, COLOR_RED);
 	init_pair(44, COLOR_BLACK, COLOR_CYAN);
 	init_pair(55, COLOR_BLACK, COLOR_WHITE);
-	getmaxyx(stdscr, y, x);
+	getmaxyx(stdscr, this->y_wmax, this->x_wmax);
 
 
 	WINDOW *win = newwin(this->y_wmax - 1, this->x_wmax - 1, 0, 0);
@@ -41,6 +41,7 @@ View::View() {
 	wattron(win, COLOR_PAIR(133));
 	wborder(win, 42, 42, 42, 42, 42, 42, 42, 42);
 	wrefresh(win);
+	while(true);
 }
 
 View::View(View const &obj) { *this = obj; }
@@ -55,17 +56,17 @@ View &View::operator=(View const &obj) {
 } 
 
 
-View::printmap(Map const &map)
+void 	View::printmap(Map const &map)
 {
 	int x1 = 0;
 	int y1 = 0;
-	while (y1 < y_max)
+	while (y1 < y_wmax)
 	{
 		x1 = 0;
 		while(x1 < x_wmax)
 		{
 			wattron(_win, map.getColor(x1, y1));
-			mvwprintw(_win, int y1, int x1, %c, map.getSymbol(x1, y1));
+			mvwprintw(_win, y1, x1, "%c", map.getSymbol(x1, y1));
 			x1++;
 		}
 		y1++;
@@ -74,5 +75,5 @@ View::printmap(Map const &map)
 
 }
 
-int View::get_x_wmax() {return (this->x_wmax)}
-int View::get_y_wmax() {return (this->y_wmax)}
+int View::get_x_wmax() {return (this->x_wmax);}
+int View::get_y_wmax() {return (this->y_wmax);}
