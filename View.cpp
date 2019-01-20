@@ -4,8 +4,14 @@
 
 #include "View.hpp"
  #include <unistd.h>
-View::View() {
+#include "Model.hpp"
 
+View::View() {
+}
+
+View::View(Model *model) {
+
+	this->_model = model;
 	initscr(); 
 	cbreak(); 
 	noecho(); 
@@ -14,11 +20,7 @@ View::View() {
 	keypad(stdscr, TRUE); 
 	nodelay(stdscr, TRUE); 
 	scrollok(stdscr, FALSE);
-
-
 	getmaxyx(stdscr, this->y_wmax, this->x_wmax);
-
-	
 	init_pair(1, COLOR_YELLOW, COLOR_BLACK);
 	init_pair(2, COLOR_BLUE, COLOR_BLACK);
 	init_pair(3, COLOR_CYAN, COLOR_BLACK);
@@ -50,6 +52,7 @@ View::View() {
 
 	_start = time (NULL);
 
+
 	draw_panel();
 	
 }
@@ -64,8 +67,14 @@ void	View::draw_panel()
 	mvwvline(_win, 1, this->x_wmax - 17, '*', 2);
 	mvwvline(_win, 1, this->x_wmax - 1, '*', 2);
 
-	mvwprintw(_win, 3, this->x_wmax - 17, "~~~~~~~~~~~~~~~~~");
+	if ( _model != nullptr && _model->getHero()!= nullptr)
+	{
+			//mvwprintw(_win, 2, this->x_wmax - 14, "****TEST**");
 
+		mvwprintw(_win, 2, this->x_wmax - 14,"HP: %d", _model->getHero()->getHP());
+	}
+	mvwprintw(_win, 3, this->x_wmax - 17, "~~~~~~~~~~~~~~~~~");
+	
 	mvwprintw(_win, 4, this->x_wmax - 17, "~~~~~~Timer~~~~~~");
 	mvwvline(_win, 5, this->x_wmax - 17, '*', 2);
 	mvwvline(_win, 5, this->x_wmax - 1, '*', 2);

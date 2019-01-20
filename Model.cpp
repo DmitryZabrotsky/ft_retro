@@ -9,9 +9,10 @@ Model::Model() {
 	std::cout << "model\n";
 	_background = Background();
 	_level = Level();
-	_view = new View();
-	_control = new Control(this, _view);
 	_hero = new Hero();
+	_view = new View(this);
+	_control = new Control(this, _view);
+
 	srand(time(0));
 }
 
@@ -56,3 +57,12 @@ void Model::heroManipulate(Map &map) {
 	_hero->collision(map);
 	_hero->mapping(map);
 }
+
+
+// (ಠ o ಠ)¤=[]:::::>
+
+
+// /\**/\
+//( o_o  )_)
+//,(u  u  ,),
+
