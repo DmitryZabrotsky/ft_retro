@@ -70,14 +70,23 @@ void Map::setOwner(int x, int y, AUnit *owner) {
 }
 
 char Map::getSymbol(int x, int y) const {
-	return _map[y][x].get_symbol();
+	if (x >= 0 && x < _x && y >= 0 && y < _y)
+		return _map[y][x].get_symbol();
+	else
+		return ' ';
 }
 
 int Map::getColor(int x, int y) const {
-	return _map[y][x].get_color();
+	if (x >= 0 && x < _x && y >= 0 && y < _y)
+		return _map[y][x].get_color();
+	else
+		return 0;
 }
 
 AUnit *Map::getOwner(int x, int y) const {
-	return _map[y][x].get_owner();
+	if (x >= 0 && x < _x && y >= 0 && y < _y)
+		return _map[y][x].get_owner();
+	else
+		return nullptr;
 }
 
