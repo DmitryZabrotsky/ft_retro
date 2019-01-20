@@ -30,15 +30,16 @@ void Level::mapping(Map &map)
 	// }
 	for (int i = 0; i < 20; i++) {
 //		std::cout << i << std::endl;
+		if (enemies[i].getHP() > 0) {
+			Map *img = enemies[i].getImj();
+			int x = enemies[i].getX();
+			int y = enemies[i].getY();
 
-		Map *img = enemies[i].getImj();
-		int x =  enemies[i].getX();
-		int y = enemies[i].getY();
-		
-	 	x =  enemies[i+1].getX();
-		y = enemies[i+1].getY();
+//	 	x =  enemies[i+1].getX();
+//		y = enemies[i+1].getY();
 //		std::cout << "got\n";
-		map.add(img, x, y);
+			map.add(img, x, y);
+		}
 	}
 }
 

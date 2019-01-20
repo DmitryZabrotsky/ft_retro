@@ -34,7 +34,7 @@ void Bullet::appear(Map const &map) {
 void Bullet::beahavior(Map const &map) {
     if (getY() > map.getY() || getY() < 0 || getHP() <= 0) {
         setY(-1);
-        setY(-1);
+        setX(-1);
         setHP(1);
     }
     else

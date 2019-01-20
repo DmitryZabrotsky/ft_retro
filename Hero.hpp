@@ -33,7 +33,6 @@ public:
 	void turnWright(int win_len);
 	void turnUp();
 	void turnDown(int win_hight);
-
 };
 
 

@@ -63,10 +63,18 @@ void AUnit::set_damage(int _damage) {
 }
 
 void AUnit::collision(Map const &map) {
-    AUnit *target = map.getOwner(getX(), getY());
-    if (target != nullptr && target != this) {
-        target->damage(this);
-        damage(target);
+    if (_imj == nullptr || _x < 0 || _y < 0)
+        return;
+    for (int i = 0; i < _imj->getY(); i++) {
+        for (int j = 0; j < _imj->getX(); j++) {
+            AUnit *target = map.getOwner(getX(), getY());
+            if (target != nullptr && target != this) {
+                exit(1);
+                target->damage(this);
+                damage(target);
+                break;
+            }
+        }
     }
 }
 

@@ -38,6 +38,8 @@ View::View() {
 
 	_win = newwin(this->y_wmax - 1, this->x_wmax - 1, 0, 0);
 	nodelay(_win, true);
+//	raw();
+	keypad(_win, true);
 	init_pair(133, COLOR_RED, COLOR_BLUE);	
 	wattron(_win, COLOR_PAIR(133));
 	wborder(_win, 42, 42, 42, 42, 42, 42, 42, 42);

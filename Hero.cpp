@@ -42,6 +42,8 @@ void Hero::beahavior(Map const &map) {
 void Hero::play(Map const &map) {
     for (int i = 0; i < 7; i++)
         bullets[i].play(map);
+    for (int i = 0; i < 7; i++)
+        bullets[i].collision(map);
 }
 
 void Hero::turnLeft() {
