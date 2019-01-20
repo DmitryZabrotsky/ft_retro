@@ -85,3 +85,7 @@ void 	View::printmap(Map const &map)
 
 int View::get_x_wmax() {return (this->x_wmax);}
 int View::get_y_wmax() {return (this->y_wmax);}
+
+WINDOW *View::getWin() const {
+	return _win;
+}
