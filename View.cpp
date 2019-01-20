@@ -63,7 +63,7 @@ void	View::draw_panel()
 
 View::View(View const &obj) { *this = obj; }
 
-View::~View() { endwin(); }
+View::~View() { delwin(_win); endwin(); }
 
 View &View::operator=(View const &obj) {
 	_win = obj._win;
