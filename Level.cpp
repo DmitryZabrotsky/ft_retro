@@ -24,20 +24,19 @@ Level& Level::operator=(Level const &obj) {
 
 void Level::mapping(Map &map)
 {
-	// for (int i = 0; i < 20; i++) 
-	// {
-	// 	Map *img = enemies[i].getImj();
-	// }
 	for (int i = 0; i < 20; i++) {
-//		std::cout << i << std::endl;
 		if (enemies[i].getHP() > 0) {
 			Map *img = enemies[i].getImj();
 			int x = enemies[i].getX();
 			int y = enemies[i].getY();
-
-//	 	x =  enemies[i+1].getX();
-//		y = enemies[i+1].getY();
-//		std::cout << "got\n";
+			map.add(img, x, y);
+		}
+	}
+	for (int i = 0; i < 4; i++) {
+		if (heals[i].getHP() > 0) {
+			Map *img = heals[i].getImj();
+			int x = heals[i].getX();
+			int y = heals[i].getY();
 			map.add(img, x, y);
 		}
 	}
@@ -47,6 +46,8 @@ void Level::mapping(Map &map)
 void Level::play(Map const&map){
 	    for (int i = 0; i < 20; i++)
      		enemies[i].play(map);
+	    for (int i = 0; i < 4; i++)
+			heals[i].play(map);
 }
 
 int Level::getScore() {

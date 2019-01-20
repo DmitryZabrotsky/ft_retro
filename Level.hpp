@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "Enemy.hpp"
+#include "Heal.hpp"
 #include "IScenario.hpp"
 
 
@@ -14,6 +15,7 @@ class Level : public IScenario {
 
 private:
 	Enemy enemies[20];
+	Heal heals[4];
 
 public:
 	Level();
