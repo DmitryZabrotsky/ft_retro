@@ -6,17 +6,23 @@
 #define LEVEL_HPP
 
 #include <iostream>
+#include "Enemy.hpp"
+#include "IScenario.hpp"
 
-class Level {
+
+class Level : public IScenario {
 
 private:
+	Enemy enemies[20];
 
 public:
 	Level();
 	Level(Level const &obj);
 	~Level();
 
-	Level &operator=(Level const &obj);
+	Level 	&operator=(Level const &obj);
+	void 	mapping(Map &obj);
+	void 	play(Map const&map);
 
 };
 

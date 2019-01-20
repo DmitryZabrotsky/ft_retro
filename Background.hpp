@@ -8,11 +8,13 @@
 #include <iostream>
 #include "Star.hpp"
 #include "IScenario.hpp"
+#include "Enemy.hpp"
 
 class Background: public IScenario {
 
 private:
 	Star stars[200];
+
 
 public:
 	Background();

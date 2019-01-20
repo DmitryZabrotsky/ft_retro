@@ -43,7 +43,8 @@ void Map::add(Map const *imj, int x, int y) {
 		return;
 	for (int i = 0; i < _y + y && i < imj->getY(); i++)
 	{
-		for (int j = 0; j < _x + x && j < imj->getY(); j++) {
+		for (int j = 0; j < _x + x && j < imj->getX(); j++) {
+			// std::cout << j << " " << x  << " " << std::endl;
 			setColor(j + x, i + y, imj->getColor(j, i));
 			setSymbol(j + x, i + y, imj->getSymbol(j, i));
 		}

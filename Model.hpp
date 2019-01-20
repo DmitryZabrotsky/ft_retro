@@ -9,6 +9,7 @@
 #include "View.hpp"
 #include "Control.hpp"
 #include "Background.hpp"
+#include "Level.hpp"
 #include <time.h>
 
 class Model {
@@ -16,6 +17,7 @@ private:
 	Control *_control;
 	View *_view;
 	Background _background;
+	Level _level;
 
 public:
 	Model();
