@@ -15,6 +15,7 @@ private:
 	WINDOW *_win;
 	int x_wmax;
 	int y_wmax;
+	void		draw_panel();
 
 public:
 	View();
@@ -25,6 +26,7 @@ public:
 	void 		printmap(Map const &obj);
 	int 		get_x_wmax();
 	int 		get_y_wmax();
+
 	WINDOW * getWin() const;
 
 };

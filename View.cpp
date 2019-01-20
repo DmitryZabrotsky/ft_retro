@@ -19,7 +19,7 @@ View::View() {
 	getmaxyx(stdscr, this->y_wmax, this->x_wmax);
 
 	
-	init_pair(1, COLOR_YELLOW, COLOR_BLACK);
+	init_pair(1, COLOR_BLUE, COLOR_BLACK);
 	init_pair(2, COLOR_BLUE, COLOR_BLACK);
 	init_pair(3, COLOR_RED, COLOR_BLACK);
 	init_pair(4, COLOR_CYAN, COLOR_BLACK);
@@ -32,16 +32,30 @@ View::View() {
 	init_pair(33, COLOR_BLACK, COLOR_RED);
 	init_pair(44, COLOR_BLACK, COLOR_CYAN);
 	init_pair(55, COLOR_BLACK, COLOR_WHITE);
+
+	init_pair(133, COLOR_BLACK, COLOR_YELLOW);	
+
 	getmaxyx(stdscr, this->y_wmax, this->x_wmax);
 
 
 
-	_win = newwin(this->y_wmax - 1, this->x_wmax - 1, 0, 0);
+	_win = newwin(this->y_wmax - 1, this->x_wmax, 0, 0);
 	nodelay(_win, true);
-	init_pair(133, COLOR_RED, COLOR_BLUE);	
 	wattron(_win, COLOR_PAIR(133));
-	wborder(_win, 42, 42, 42, 42, 42, 42, 42, 42);
+	//wborder(_win, 42, 42, 42, 42, 42, 42, 42, 42);
 	wrefresh(_win);
+}
+
+void	View::draw_panel()
+{
+	wattron(_win, COLOR_PAIR(133));
+
+	mvwprintw(_win, 0, this->x_wmax - 17, "~~~~~~Score~~~~~~");
+	mvwvline(_win, 1, this->x_wmax - 17, '*', 2);
+	mvwvline(_win, 1, this->x_wmax - 1, '*', 2);
+
+	mvwprintw(_win, 3, this->x_wmax - 17, "~~~~~~~~~~~~~~~~~");
+
 }
 
 View::View(View const &obj) { *this = obj; }
@@ -60,13 +74,10 @@ void 	View::printmap(Map const &map)
 {
 	int x1 = 0;
 	int y1 = 0;
-//	wborder(_win, 42, 42, 42, 42, 42, 42, 42, 42);
-	//init_pair(1, COLOR_YELLOW, COLOR_BLUE);
 
-	wattron(_win, COLOR_PAIR(1));
-//	mvwprintw(_win, 1, 1, "lol");
-//	wrefresh(_win);
-//	while(42);
+
+
+
 
 	werase(_win);
 	while (y1 < map.getY())
@@ -84,6 +95,7 @@ void 	View::printmap(Map const &map)
 		}
 		y1++;
 	}
+	draw_panel();
 	wrefresh(_win);
 
 }
