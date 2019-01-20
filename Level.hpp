@@ -9,6 +9,7 @@
 #include "Enemy.hpp"
 #include "Heal.hpp"
 #include "IScenario.hpp"
+#include "Boss.hpp"
 
 
 class Level : public IScenario {
