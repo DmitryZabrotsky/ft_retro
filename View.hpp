@@ -22,7 +22,7 @@ public:
 	~View();
 	View &operator=(View const &obj);
 
-	void 		printmap(map sconst &obj);
+	void 		printmap(map const &obj);
 	int 		get_x_wmax();
 	int 		get_y_wmax();
 
