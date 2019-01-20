@@ -6,10 +6,12 @@
 #define BACKGROUND_HPP
 
 #include <iostream>
+#include "Star.hpp"
 
 class Background {
 
 private:
+	Star stars[200];
 
 public:
 	Background();

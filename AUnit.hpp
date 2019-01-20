@@ -29,6 +29,10 @@ public:
 	void setX(int x);
 	void setY(int y);
 	Map &getImj();
+
+	virtual void appear(int x, int y) = 0;
+	virtual void beahavior(Map const &map) = 0;
+	virtual void play(Map const &map) = 0;
 };
 
-#endif AUNIT_HPP
+#endif
