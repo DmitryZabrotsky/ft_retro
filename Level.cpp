@@ -17,7 +17,7 @@ Level::~Level() {
 }
 
 Level& Level::operator=(Level const &obj) {
-
+    return *this;
 }
 
 

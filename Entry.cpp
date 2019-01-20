@@ -4,7 +4,7 @@
 
 #include "Entry.hpp"
 
-Entry::Entry() : _color(1), _symbol(NULL) {}
+Entry::Entry() : _color(1), _symbol('\0') {}
 
 Entry::Entry(Entry const &obj) {*this = obj;}
 

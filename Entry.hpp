@@ -8,7 +8,8 @@
 #define ENTRY_HPP
 
 #include <iostream>
-#include "AUnit.hpp"
+
+class AUnit;
 
 class Entry {
 

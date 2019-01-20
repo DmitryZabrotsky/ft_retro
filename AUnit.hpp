@@ -12,8 +12,8 @@ class AUnit {
 private:
 	int _hp; 
 	int _speed;
-	int _x = -1;
-	int _y = -1;
+	int _x;
+	int _y;
 	Map *_imj;
 	AUnit();
 

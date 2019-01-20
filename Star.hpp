@@ -11,15 +11,15 @@
 class Star : public AUnit {
 
 private:
-	const int __i_len = 1;
-	const int __i_hight = 1;
-	const char __img[1][1] = {{'.'}};
+	static const int __i_len = 1;
+	static const int __i_hight = 1;
+	static const char __img[1][1];
 
 public:
 	Star();
-	void appear(Map const &map) override;
-	void beahavior(Map const &map) override;
-	void play(Map const &map) override;
+	virtual void appear(Map const &map);
+	virtual void beahavior(Map const &map);
+	virtual void play(Map const &map);
 
 };
 

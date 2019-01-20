@@ -4,14 +4,14 @@
 
 #include "Bullet.hpp"
 
-Bullet::Bullet() {
+Bullet::Bullet(): AUnit(1,1) {
 
 }
 
-Bullet::Bullet(Bullet const &obj) {
+Bullet::Bullet(Bullet const &obj): AUnit(obj.getHP(), obj.getSpeed()) {
 
 }
 
 Bullet& Bullet::operator=(Bullet const *obj) {
-
+    return *this;
 }

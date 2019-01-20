@@ -4,6 +4,8 @@
 
 #include "Star.hpp"
 
+char const Star :: __img[1][1] = {{'.'}};
+
 void Star::appear(Map const &map) {
 	setX(rand() % map.getX());
 	setY(0);
@@ -23,6 +25,7 @@ void Star::play(Map const &map) {
 
 Star::Star() : AUnit(0, 3) {
 	Map *imj = new Map(__i_len, __i_hight);
+	std::cout << imj->getX();
 	for (int i = 0; i < __i_hight; i++)
 	{
 		for (int j = 0; j < __i_len; j++)

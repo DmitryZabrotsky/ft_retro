@@ -17,5 +17,5 @@ Control::~Control() {
 }
 
 Control &Control::operator=(Control const &obj) {
-	return <#initializer#>;
+	return *this;
 }

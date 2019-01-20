@@ -4,14 +4,14 @@
 
 #include "Enemy.hpp"
 
-Enemy::Enemy() {
+Enemy::Enemy(): AUnit(2, 2) {
 
 }
 
-Enemy::Enemy(Enemy const &obj) {
+Enemy::Enemy(Enemy const &obj): AUnit(obj.getSpeed(), obj.getHP()) {
 
 }
 
 Enemy& Enemy::operator=(Enemy const *obj) {
-
+    return *this;
 }

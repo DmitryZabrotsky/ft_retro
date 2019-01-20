@@ -17,15 +17,21 @@ Background::~Background() {
 }
 
 Background &Background::operator=(Background const &obj) {
-	return <#initializer#>;
+	return *this;
 }
 
-<<<<<<< HEAD
-void Background::Mapping(Map &obj) {
-
-=======
 void Background::mapping(Map &map) {
-	for (int i = 0; i < 200; i++)
-		map.add(stars[i].getImj(), stars[i].getX(), stars[i].getY());
->>>>>>> c53524e61ddf37658e592e5e70c8266ac1773303
+	for (int i = 0; i < 200; i++) {
+		std::cout << i << std::endl;
+		Map *img = stars[i].getImj();
+		int x =  stars[i].getX();
+		int y = stars[i].getY();
+		std::cout << "got\n";
+		map.add(img, x, y);
+	}
+}
+
+void Background::play(Map const &map) {
+    for (int i = 0; i < 200; i++)
+        stars[i].play(map);
 }

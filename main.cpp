@@ -1,8 +1,12 @@
 
 #include "View.hpp"
+#include "Model.hpp"
 
 int main(void)
 {
-	View view;
+    std::cout << "start\n";
+	Model model;
+	model.simulation();
+//	View view;
 	return (1);
 }

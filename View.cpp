@@ -39,9 +39,8 @@ View::View() {
 	nodelay(stdscr, FALSE);
 	init_pair(133, COLOR_RED, COLOR_BLUE);	
 	wattron(win, COLOR_PAIR(133));
-	wborder(win, 42, 42, 42, 42, 42, 42, 42, 42);
+//	wborder(win, 42, 42, 42, 42, 42, 42, 42, 42);
 	wrefresh(win);
-	while(true);
 }
 
 View::View(View const &obj) { *this = obj; }
@@ -58,20 +57,20 @@ View &View::operator=(View const &obj) {
 
 void 	View::printmap(Map const &map)
 {
-	int x1 = 0;
-	int y1 = 0;
-	while (y1 < y_wmax)
-	{
-		x1 = 0;
-		while(x1 < x_wmax)
-		{
-			wattron(_win, map.getColor(x1, y1));
-			mvwprintw(_win, y1, x1, "%c", map.getSymbol(x1, y1));
-			x1++;
-		}
-		y1++;
-	}
-	wrefresh(_win);
+//	int x1 = 0;
+//	int y1 = 0;
+//	while (y1 < y_wmax)
+//	{
+//		x1 = 0;
+//		while(x1 < x_wmax)
+//		{
+////			wattron(_win, map.getColor(x1, y1));
+////			mvwprintw(_win, y1, x1, "%c", map.getSymbol(x1, y1));
+//			x1++;
+//		}
+//		y1++;
+//	}
+//	wrefresh(_win);
 
 }
 

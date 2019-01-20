@@ -9,6 +9,8 @@ AUnit::AUnit() {
 
 
 AUnit::AUnit(int hp, int speed): _hp(hp), _speed(speed) {
+    _x = -1;
+    _y = -1;
     _imj = nullptr;
 }
 

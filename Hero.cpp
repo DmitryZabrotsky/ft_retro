@@ -4,14 +4,14 @@
 
 #include "Hero.hpp"
 
-Hero::Hero() {
+Hero::Hero(): AUnit(4, 2){
 
 }
 
-Hero::Hero(Hero const &obj) {
+Hero::Hero(Hero const &obj): AUnit(obj.getHP(), getSpeed()) {
 
 }
 
 Hero& Hero::operator=(Hero const *obj) {
-
+    return *this;
 }
