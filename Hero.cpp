@@ -40,8 +40,8 @@ void Hero::beahavior(Map const &map) {
 }
 
 void Hero::play(Map const &map) {
-    if (getX() < 0 || getY() < 0)
-        appear(map);
+    for (int i = 0; i < 7; i++)
+        bullets[i].play(map);
 }
 
 void Hero::turnLeft() {
@@ -62,4 +62,24 @@ void Hero::turnUp() {
 void Hero::turnDown(int win_hight) {
     if (getY() + getImj()->getY() + getSpeed() < win_hight)
         setY(getY() + getSpeed());
+}
+
+void Hero::shot() {
+    for (int i = 0; i < 7; i++)
+    {
+        if (bullets[i].getY() < 0 || bullets[i].getX() < 0) {
+            bullets[i].shot(this);
+            break;
+        }
+    }
+}
+
+void Hero::mapping(Map &map) {
+    for (int i = 0; i < 7; i++) {
+        Map *img = bullets[i].getImj();
+        int x =  bullets[i].getX();
+        int y = bullets[i].getY();
+        map.add(img, x, y);
+    }
+    map.add(getImj(), getX(), getY());
 }

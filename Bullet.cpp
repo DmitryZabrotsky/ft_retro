@@ -6,17 +6,7 @@
 
 char const Bullet:: __img[1][1] = {{'*'}};
 
-Bullet::Bullet() : AUnit(1, 0, 1) {
-}
-
-Bullet::Bullet(Bullet const &obj): AUnit(obj.getHP(), obj.getSpeed(), obj.get_damage()) {
-}
-
-Bullet& Bullet::operator=(Bullet const *obj) {
-    return *this;
-}
-
-Bullet::Bullet(int speed): AUnit(1, speed, 1) {
+Bullet::Bullet() : AUnit(1, -0.2, 1) {
     Map *imj = new Map(__i_len, __i_hight);
     for (int i = 0; i < __i_hight; i++)
     {
@@ -28,6 +18,13 @@ Bullet::Bullet(int speed): AUnit(1, speed, 1) {
         }
     }
     set_imj(imj);
+}
+
+Bullet::Bullet(Bullet const &obj): AUnit(obj.getHP(), obj.getSpeed(), obj.get_damage()) {
+}
+
+Bullet& Bullet::operator=(Bullet const *obj) {
+    return *this;
 }
 
 void Bullet::appear(Map const &map) {
@@ -46,5 +43,12 @@ void Bullet::beahavior(Map const &map) {
 
 void Bullet::play(Map const &map) {
     beahavior(map);
+}
+
+void Bullet::shot(AUnit *unit) {
+    float x = unit->getX() + unit->getImj()->getX() / 2;
+    float y = unit->getY() + 1;
+    setX(x);
+    setY(y);
 }
 

@@ -46,6 +46,7 @@ void Control::userEvent(Map const &map) {
 			break;
 		case ' ':
 		case '\n':
+			_model->getHero()->shot();
 			break;
 		default:
 			break;

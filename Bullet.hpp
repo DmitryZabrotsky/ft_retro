@@ -14,13 +14,13 @@ private:
 	static const int __i_len = 1;
 	static const int __i_hight = 1;
 	static const char __img[1][1];
-	Bullet();
 
 public:
-	Bullet(int speed);
+	Bullet();
 	Bullet(Bullet const &obj);
 	Bullet &operator=(Bullet const *obj);
 
+	void shot(AUnit *unit);
 	virtual void appear(Map const &map);
 	virtual void beahavior(Map const &map);
 	virtual void play(Map const &map);

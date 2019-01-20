@@ -45,7 +45,10 @@ Hero *Model::getHero() const {
 }
 
 void Model::heroManipulate(Map &map) {
+	if (_hero->getX() < 0 || _hero->getY() < 0)
+		_hero->appear(map);
 	_hero->play(map);
 	_control->userEvent(map);
-	map.add(_hero->getImj(), _hero->getX(), _hero->getY());
+	_hero->mapping(map);
+//	map.add(_hero->getImj(), _hero->getX(), _hero->getY());
 }
