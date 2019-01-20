@@ -25,7 +25,10 @@ public:
 	int getY() const;
 	void setSymbol(int x, int y, char symbol);
 	void setColor(int x, int y, int color);
-	void setOwner(int x, int y, AUnit *owner)
+	void setOwner(int x, int y, AUnit *owner);
+	char getSymbol(int x, int y) const;
+	int getColor(int x, int y) const;
+	AUnit *getOwner(int x, int y) const;
 	Map &operator=(Map const &obj);
 	void add(Map const &imj, int x, int y);
 };
