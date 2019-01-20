@@ -7,10 +7,11 @@
 
 #include <iostream>
 #include "View.hpp"
-#include "Control.hpp"
 #include "Background.hpp"
 #include "Level.hpp"
 #include <time.h>
+
+class Control;
 
 class Model {
 private:
