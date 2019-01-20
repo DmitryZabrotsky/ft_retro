@@ -12,7 +12,7 @@ Bullet::Bullet() : AUnit(1, -0.2, 1) {
     {
         for (int j = 0; j < __i_len; j++)
         {
-            imj->setColor(j, i, 1);
+            imj->setColor(j, i, 3);
             imj->setSymbol(j, i, __img[i][j]);
             imj->setOwner(j, i, this);
         }
