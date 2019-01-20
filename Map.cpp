@@ -41,19 +41,13 @@ Map::~Map() {
 void Map::add(Map const *imj, int x, int y) {
 	if (x < 0 || y < 0)
 		return;
-	std::cout <<"add " << _y << " " << _x << std::endl;
 	for (int i = 0;i < _y + y ; i++)
 	{
-		std::cout << x << " " << y << std::endl;
 		for (int j = 0; j < _x + x; j++) {
-			std::cout << "color " << std::endl;
 			setColor(j + x, i + y, imj->getColor(j, i));
-			std::cout << "symbol " << std::endl;
-			setSymbol(j + x, i + y, '@');
-//			_map[i + y][j + x] = imj->_map[i][j];
+			setSymbol(j + x, i + y, imj->getSymbol(j, i));
 		}
 	}
-	std::cout << " added" << std::endl;
 }
 
 int Map::getX() const {
@@ -87,15 +81,10 @@ char Map::getSymbol(int x, int y) const {
 }
 
 int Map::getColor(int x, int y) const {
-	std::cout << "getting " << x << " " << y << "; ";
-//	std::cout << this->getX();// << " " <<  this->getY() <<  std::endl;
-//	if (x >= 0 && x < _x && y >= 0 && y < _y)
-//		std::cout << "getting\n";
-	return 'u';
-//		return _map[y][x].get_color();
-//	}
-//	else
-//		return 0;
+	if (x >= 0 && x < _x && y >= 0 && y < _y)
+		return _map[y][x].get_color();
+	else
+		return 0;
 }
 
 AUnit *Map::getOwner(int x, int y) const {

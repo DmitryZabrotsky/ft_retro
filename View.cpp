@@ -35,12 +35,12 @@ View::View() {
 	getmaxyx(stdscr, this->y_wmax, this->x_wmax);
 
 
-	WINDOW *win = newwin(this->y_wmax - 1, this->x_wmax - 1, 0, 0);
+	_win = newwin(this->y_wmax - 1, this->x_wmax - 1, 0, 0);
 	nodelay(stdscr, FALSE);
 	init_pair(133, COLOR_RED, COLOR_BLUE);	
-	wattron(win, COLOR_PAIR(133));
-//	wborder(win, 42, 42, 42, 42, 42, 42, 42, 42);
-	wrefresh(win);
+	wattron(_win, COLOR_PAIR(133));
+	wborder(_win, 42, 42, 42, 42, 42, 42, 42, 42);
+	wrefresh(_win);
 }
 
 View::View(View const &obj) { *this = obj; }
@@ -57,20 +57,29 @@ View &View::operator=(View const &obj) {
 
 void 	View::printmap(Map const &map)
 {
-//	int x1 = 0;
-//	int y1 = 0;
-//	while (y1 < y_wmax)
-//	{
-//		x1 = 0;
-//		while(x1 < x_wmax)
-//		{
-////			wattron(_win, map.getColor(x1, y1));
-////			mvwprintw(_win, y1, x1, "%c", map.getSymbol(x1, y1));
-//			x1++;
-//		}
-//		y1++;
-//	}
+	int x1 = 0;
+	int y1 = 0;
+//	wborder(_win, 42, 42, 42, 42, 42, 42, 42, 42);
+	wattron(_win, COLOR_PAIR(1));
+//	mvwprintw(_win, 1, 1, "lol");
 //	wrefresh(_win);
+//	while(42);
+
+	werase(_win);
+	while (y1 < map.getY())
+	{
+		x1 = 0;
+		while(x1 < map.getX())
+		{
+			wattron(_win, map.getColor(x1, y1));
+			char c = map.getSymbol(x1, y1);
+			if (c != ' ')
+				mvwprintw(_win, y1, x1, "%c", c);
+			x1++;
+		}
+		y1++;
+	}
+	wrefresh(_win);
 
 }
 

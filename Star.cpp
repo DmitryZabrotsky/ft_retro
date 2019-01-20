@@ -12,20 +12,19 @@ void Star::appear(Map const &map) {
 }
 
 void Star::beahavior(Map const &map) {
-	setX(getX() + getSpeed());
-	setY(getX() + getSpeed());
+//	setX(getX() + getSpeed());
+	setY(getY() + getSpeed());
 }
 
 void Star::play(Map const &map) {
 	if (getY() >= 0 && getY() < map.getY())
 		beahavior(map);
-	else if (rand() % 5 == 4)
+	else if (rand() % 20 == 4)
 		appear(map);
 }
 
-Star::Star() : AUnit(0, 3) {
+Star::Star() : AUnit(0, 1) {
 	Map *imj = new Map(__i_len, __i_hight);
-	std::cout << imj->getX();
 	for (int i = 0; i < __i_hight; i++)
 	{
 		for (int j = 0; j < __i_len; j++)
@@ -36,4 +35,13 @@ Star::Star() : AUnit(0, 3) {
 		}
 	}
 	set_imj(imj);
+//	printStar();
+}
+
+void Star::printStar() {
+	for (int i = 0; i < getImj()->getY(); i++) {
+		for (int j = 0; j < getImj()->getX(); j++)
+			std::cout << '.';
+		std::cout << std::endl;
+	}
 }

@@ -7,7 +7,8 @@
 Model::Model() {
 	std::cout << "model\n";
 	_background = Background();
-//	_view = new View();
+	_view = new View();
+	srand(time(0));
 }
 
 Model::Model(Model const &obj) {
@@ -24,13 +25,9 @@ Model &Model::operator=(Model const &onj) {
 
 void Model::simulation() {
 	while (42) {
-		std::cout << "rrr\n";
-		Map map = Map(20, 20);
-		std::cout << "create map\n";
+		Map map = Map(_view->get_x_wmax(), _view->get_y_wmax());
 		_background.play(map);
-		std::cout << "play\n";
 		_background.mapping(map);
-		std::cout << "going to print\n";
-//		_view->printmap(map);
+		_view->printmap(map);
 	}
 }

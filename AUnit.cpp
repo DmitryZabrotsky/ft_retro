@@ -47,7 +47,7 @@ void AUnit::setY(int y) {
 }
 
 Map *AUnit::getImj() const {
-    return nullptr;
+    return _imj;
 }
 
 void AUnit::set_imj(Map *_imj) {
