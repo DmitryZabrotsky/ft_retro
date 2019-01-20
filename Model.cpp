@@ -49,6 +49,6 @@ void Model::heroManipulate(Map &map) {
 		_hero->appear(map);
 	_hero->play(map);
 	_control->userEvent(map);
+	_hero->collision(map);
 	_hero->mapping(map);
-//	map.add(_hero->getImj(), _hero->getX(), _hero->getY());
 }
