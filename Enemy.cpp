@@ -23,7 +23,7 @@ void Enemy::play(Map const &map) {
 }
 
 
-Enemy::Enemy(): AUnit(2, 2) {
+Enemy::Enemy(): AUnit(2, 2, 1) {
 	Map *imj = new Map(__i_len, __i_hight);
 	for (int i = 0; i < __i_hight; i++)
 	{

@@ -4,11 +4,11 @@
 
 #include "Hero.hpp"
 
-Hero::Hero(): AUnit(4, 2){
+Hero::Hero(): AUnit(4, 2, 2){
 
 }
 
-Hero::Hero(Hero const &obj): AUnit(obj.getHP(), getSpeed()) {
+Hero::Hero(Hero const &obj): AUnit(obj.getHP(), getSpeed(), obj.get_damage()) {
 
 }
 

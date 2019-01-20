@@ -21,11 +21,9 @@ public:
 	Bullet(Bullet const &obj);
 	Bullet &operator=(Bullet const *obj);
 
-	void appear(Map const &map);
-	void beahavior(Map const &map);
-	void collision(Map const &map);
-	void play(Map const &map);
-    void damage(AUnit *unit);
+	virtual void appear(Map const &map);
+	virtual void beahavior(Map const &map);
+	virtual void play(Map const &map);
 };
 
 

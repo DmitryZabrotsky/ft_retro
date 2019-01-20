@@ -44,18 +44,7 @@ void Bullet::beahavior(Map const &map) {
         setY(getY() + getSpeed());
 }
 
-void Bullet::collision(Map const &map) {
-    AUnit *target = map.getOwner(getX(), getY());
-    if (target != nullptr && target != this) {
-        target->damage(this);
-        damage(target);
-    }
-}
-
 void Bullet::play(Map const &map) {
     beahavior(map);
 }
 
-void Bullet::damage(AUnit *unit) {
-    setHP(getHP() - unit->get_damage());
-}

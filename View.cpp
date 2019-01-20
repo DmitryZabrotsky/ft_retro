@@ -76,7 +76,7 @@ void 	View::printmap(Map const &map)
 		{
 			usleep((useconds_t)((int)1000000 / 100000));
 
-			wattron(_win, map.getColor(x1, y1));
+			wattron(_win, COLOR_PAIR(map.getColor(x1, y1)));
 			char c = map.getSymbol(x1, y1);
 			if (c != ' ')
 				mvwprintw(_win, y1, x1, "%c", c);

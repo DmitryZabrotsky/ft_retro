@@ -62,3 +62,15 @@ void AUnit::set_damage(int _damage) {
     AUnit::_damage = _damage;
 }
 
+void AUnit::collision(Map const &map) {
+    AUnit *target = map.getOwner(getX(), getY());
+    if (target != nullptr && target != this) {
+        target->damage(this);
+        damage(target);
+    }
+}
+
+void AUnit::damage(AUnit *unit) {
+    setHP(getHP() - unit->get_damage());
+}
+

@@ -36,11 +36,4 @@ Star::Star() : AUnit(0, 1, 0) {
 	set_imj(imj);
 }
 
-void Star::collision(Map const &map) {
-	(void)map;
-}
-
-void Star::damage(AUnit *unit) {
-	(void)unit;
-}
 

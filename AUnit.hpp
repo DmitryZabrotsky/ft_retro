@@ -37,8 +37,8 @@ public:
 
 	virtual void appear(Map const &map) = 0;
 	virtual void beahavior(Map const &map) = 0;
-	virtual void collision(Map const &map) = 0;
-	virtual void damage(AUnit *unit) = 0;
+	void collision(Map const &map);
+	void damage(AUnit *unit);
 	virtual void play(Map const &map) = 0;
 };
 
