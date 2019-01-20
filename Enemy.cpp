@@ -18,12 +18,12 @@ void Enemy::beahavior(Map const &map) {
 void Enemy::play(Map const &map) {
 	if (getY() >= 0 && getY() < map.getY())
 		beahavior(map);
-	else if (rand() % 20 == 4)
+	else if (rand() % 150 == 4)
 		appear(map);
 }
 
 
-Enemy::Enemy(): AUnit(2, 2, 1) {
+Enemy::Enemy(): AUnit(2, 0.1, 1) {
 	Map *imj = new Map(__i_len, __i_hight);
 	for (int i = 0; i < __i_hight; i++)
 	{

@@ -9,6 +9,7 @@
 #include "View.hpp"
 #include "Background.hpp"
 #include "Level.hpp"
+#include "Hero.hpp"
 #include <time.h>
 
 class Control;
@@ -17,8 +18,11 @@ class Model {
 private:
 	Control *_control;
 	View *_view;
+	Hero *_hero;
 	Background _background;
 	Level _level;
+
+	void heroManipulate(Map &map);
 
 public:
 	Model();
@@ -26,6 +30,7 @@ public:
 	~Model();
 	Model &operator=(Model const &onj);
 	void simulation();
+	Hero *getHero() const;
 };
 
 

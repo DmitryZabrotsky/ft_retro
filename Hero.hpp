@@ -12,8 +12,8 @@
 class Hero : public AUnit {
 
 private:
-	static const int __i_len = 7;
-	static const int __i_hight = 13;
+	static const int __i_len = 5;
+	static const int __i_hight = 2;
 	static const char __img[2][5];
 
 public:
@@ -25,6 +25,10 @@ public:
 	virtual void appear(Map const &map);
 	virtual void beahavior(Map const &map);
 	virtual void play(Map const &map);
+	void turnLeft();
+	void turnWright(int win_len);
+	void turnUp();
+	void turnDown(int win_hight);
 
 };
 

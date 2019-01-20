@@ -3,12 +3,15 @@
 //
 
 #include "Model.hpp"
+#include "Control.hpp"
 
 Model::Model() {
 	std::cout << "model\n";
 	_background = Background();
 	_level = Level();
 	_view = new View();
+	_control = new Control(this, _view);
+	_hero = new Hero();
 	srand(time(0));
 }
 
@@ -32,6 +35,17 @@ void Model::simulation() {
 		_background.mapping(map);
 		_level.play(map);
 		_level.mapping(map);
+		heroManipulate(map);
 		_view->printmap(map);
 	}
+}
+
+Hero *Model::getHero() const {
+	return _hero;
+}
+
+void Model::heroManipulate(Map &map) {
+	_hero->play(map);
+	_control->userEvent(map);
+	map.add(_hero->getImj(), _hero->getX(), _hero->getY());
 }

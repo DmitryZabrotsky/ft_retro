@@ -8,7 +8,7 @@ AUnit::AUnit() {
 }
 
 
-AUnit::AUnit(int hp, int speed, int damage): _hp(hp), _speed(speed), _damage(damage) {
+AUnit::AUnit(float hp, float speed, float damage): _hp(hp), _speed(speed), _damage(damage) {
     _x = -1;
     _y = -1;
     _imj = nullptr;
@@ -18,11 +18,11 @@ int AUnit::getHP() const {
     return _hp;
 }
 
-int AUnit::getSpeed() const {
+float AUnit::getSpeed() const {
     return _speed;
 }
 
-void AUnit::setSpeed(int speed) {
+void AUnit::setSpeed(float speed) {
     _speed = speed;
 }
 
@@ -30,19 +30,19 @@ void AUnit::setHP(int hp) {
     _hp = hp;
 }
 
-int AUnit::getX() const {
+float AUnit::getX() const {
     return _x;
 }
 
-int AUnit::getY() const {
+float AUnit::getY() const {
     return _y;
 }
 
-void AUnit::setX(int x) {
+void AUnit::setX(float x) {
     _x = x;
 }
 
-void AUnit::setY(int y) {
+void AUnit::setY(float y) {
     _y = y;
 }
 

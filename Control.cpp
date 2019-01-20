@@ -24,21 +24,25 @@ Control &Control::operator=(Control const &obj) {
 Control::Control(Model *model, View *view): _model(model), _view(view) {
 }
 
-void Control::userEvent() {
+void Control::userEvent(Map const &map) {
 	int user = 0;
 	user = wgetch(_view->getWin());
 	switch (user) {
 		case KEY_RIGHT:
 		case 'd':
+			_model->getHero()->turnWright(map.getX());
 			break;
 		case KEY_LEFT:
 		case 'a':
+			_model->getHero()->turnLeft();
 			break;
 		case KEY_UP:
 		case 'w':
+			_model->getHero()->turnUp();
 			break;
 		case KEY_DOWN:
 		case 's':
+			_model->getHero()->turnDown(map.getY());
 			break;
 		case ' ':
 		case '\n':

@@ -18,11 +18,11 @@ void Star::beahavior(Map const &map) {
 void Star::play(Map const &map) {
 	if (getY() >= 0 && getY() < map.getY())
 		beahavior(map);
-	else if (rand() % 20 == 4)
+	else if (rand() % 300 == 4)
 		appear(map);
 }
 
-Star::Star() : AUnit(0, 1, 0) {
+Star::Star() : AUnit(0, 0.15, 0) {
 	Map *imj = new Map(__i_len, __i_hight);
 	for (int i = 0; i < __i_hight; i++)
 	{

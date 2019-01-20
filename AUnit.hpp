@@ -11,24 +11,24 @@ class AUnit {
 
 private:
 	int _hp; 
-	int _speed;
-	int _x;
-	int _y;
+	float _speed;
+	float _x;
+	float _y;
 	int _damage;
 	Map *_imj;
 	AUnit();
 
 public:
 	virtual ~AUnit() {} 
-	AUnit(int hp, int speed, int damage);
+	AUnit(float hp, float speed, float damage);
 	int getHP() const;
- 	int getSpeed() const;
-	void setSpeed(int speed); 
+ 	float getSpeed() const;
+	void setSpeed(float speed);
 	void setHP(int hp);
-	int getX() const;
-	int getY() const;
-	void setX(int x);
-	void setY(int y);
+	float getX() const;
+	float getY() const;
+	void setX(float x);
+	void setY(float y);
 	Map *getImj() const;
 	int get_damage() const;
 	void set_damage(int _damage);

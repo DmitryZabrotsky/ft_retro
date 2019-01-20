@@ -37,7 +37,7 @@ View::View() {
 
 
 	_win = newwin(this->y_wmax - 1, this->x_wmax - 1, 0, 0);
-	nodelay(stdscr, FALSE);
+	nodelay(_win, true);
 	init_pair(133, COLOR_RED, COLOR_BLUE);	
 	wattron(_win, COLOR_PAIR(133));
 	wborder(_win, 42, 42, 42, 42, 42, 42, 42, 42);
@@ -74,7 +74,7 @@ void 	View::printmap(Map const &map)
 		x1 = 0;
 		while(x1 < map.getX())
 		{
-			usleep((useconds_t)((int)1000000 / 100000));
+//			usleep((useconds_t)((int)1000000 / 100000));
 
 			wattron(_win, COLOR_PAIR(map.getColor(x1, y1)));
 			char c = map.getSymbol(x1, y1);

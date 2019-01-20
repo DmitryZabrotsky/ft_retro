@@ -19,7 +19,7 @@ public:
 	Control(Control const &obj);
 	~Control();
 	Control &operator=(Control const &obj);
-	void userEvent();
+	void userEvent(Map const& map);
 };
 
 
