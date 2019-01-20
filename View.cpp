@@ -65,7 +65,7 @@ View::printmap(Map const &map)
 		while(x1 < x_wmax)
 		{
 			wattron(win, map.getColor(x1, y1));
-			mvwprintw(_win, int y1, int x1, %c, getSymbol(x1, y1));
+			mvwprintw(_win, int y1, int x1, %c, map.getSymbol(x1, y1));
 			x1++;
 		}
 		y1++;
