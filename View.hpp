@@ -38,6 +38,8 @@ public:
 
 	WINDOW * getWin() const;
 
+	void		gameover();
+
 };
 
 

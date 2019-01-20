@@ -10,8 +10,11 @@ Model::Model() {
 	_background = Background();
 	_level = Level();
 	_hero = new Hero();
-	_view = new View();
+	_totalScore = 0;
 	_control = new Control(this, _view);
+	_view = new View(this);
+	_control = new Control(this, _view);
+
 	srand(time(0));
 }
 
@@ -33,6 +36,7 @@ void Model::simulation() {
 		 // Map map = Map(20, 20);
 		_background.play(map);
 		_background.mapping(map);
+		_totalScore = _level.getScore();
 		_level.play(map);
 		_level.mapping(map);
 		heroManipulate(map);
@@ -45,6 +49,10 @@ Hero *Model::getHero() const {
 }
 
 void Model::heroManipulate(Map &map) {
+	if (_hero->getHP() <= 0) {
+		_view->gameover();
+		_control->gameover();
+	}
 	if (_hero->getX() < 0 || _hero->getY() < 0)
 		_hero->appear(map);
 	_hero->play(map);
@@ -52,3 +60,12 @@ void Model::heroManipulate(Map &map) {
 	_hero->collision(map);
 	_hero->mapping(map);
 }
+
+
+// (ಠ o ಠ)¤=[]:::::>
+
+
+// /\**/\
+//( o_o  )_)
+//,(u  u  ,),
+

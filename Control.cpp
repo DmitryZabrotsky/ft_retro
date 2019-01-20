@@ -55,3 +55,15 @@ void Control::userEvent(Map const &map) {
 			break;
 	}
 }
+
+void Control::gameover() {
+	int key = 0;
+	while (42) {
+		key = wgetch(_view->getWin());
+		if (key == 'q') {
+			delete _view;
+			system("reset");
+			exit(0);
+		}
+	}
+}

@@ -20,6 +20,7 @@ public:
 	~Control();
 	Control &operator=(Control const &obj);
 	void userEvent(Map const& map);
+	void gameover();
 };
 
 
