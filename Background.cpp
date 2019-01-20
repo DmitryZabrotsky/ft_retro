@@ -29,6 +29,7 @@ void Background::mapping(Map &map) {
 //		std::cout << "got\n";
 		map.add(img, x, y);
 	}
+
 }
 
 void Background::play(Map const &map) {
