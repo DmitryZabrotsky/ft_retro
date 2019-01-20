@@ -30,7 +30,7 @@ public:
 	int getColor(int x, int y) const;
 	AUnit *getOwner(int x, int y) const;
 	Map &operator=(Map const &obj);
-	void add(Map const &imj, int x, int y);
+	void add(Map const *imj, int x, int y);
 };
 
 
