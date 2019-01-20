@@ -20,7 +20,7 @@ public:
 	~Background();
 	Background &operator=(Background const &obj);
 
-	void Mapping(Map &obj) override;
+	void mapping(Map &obj) override;
 };
 
 

@@ -38,11 +38,11 @@ Map::~Map() {
 	delete _map;
 }
 
-void Map::add(Map const &imj, int x, int y) {
-	for (int i = y; i < _y && i < imj._y + y; i++)
+void Map::add(Map const *imj, int x, int y) {
+	for (int i = y; i < _y && i < imj->_y + y; i++)
 	{
-		for (int j = x; j < _x && j < imj._x + x; j++)
-			_map[i][j] = imj._map[i - y][j - x];
+		for (int j = x; j < _x && j < imj->_x + x; j++)
+			_map[i][j] = imj->_map[i - y][j - x];
 	}
 }
 

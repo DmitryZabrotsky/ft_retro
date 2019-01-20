@@ -20,6 +20,7 @@ Background &Background::operator=(Background const &obj) {
 	return <#initializer#>;
 }
 
-void Background::Mapping(Map &obj) {
-	
+void Background::mapping(Map &map) {
+	for (int i = 0; i < 200; i++)
+		map.add(stars[i].getImj(), stars[i].getX(), stars[i].getY());
 }
