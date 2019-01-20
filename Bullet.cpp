@@ -47,7 +47,14 @@ void Bullet::play(Map const &map) {
 
 void Bullet::shot(AUnit *unit) {
     float x = unit->getX() + unit->getImj()->getX() / 2;
-    float y = unit->getY() + 1;
+    float y = unit->getY() - 1;
+    setX(x);
+    setY(y);
+}
+
+void Bullet::shotBoss(AUnit *unit) {
+    float x = unit->getX() + unit->getImj()->getX() / 2;
+    float y = unit->getY() + unit->getY();
     setX(x);
     setY(y);
 }

@@ -21,6 +21,7 @@ public:
 	Bullet &operator=(Bullet const *obj);
 
 	void shot(AUnit *unit);
+	void shotBoss(AUnit *unit);
 	virtual void appear(Map const &map);
 	virtual void beahavior(Map const &map);
 	virtual void play(Map const &map);
