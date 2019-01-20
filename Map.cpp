@@ -41,9 +41,9 @@ Map::~Map() {
 void Map::add(Map const *imj, int x, int y) {
 	if (x < 0 || y < 0)
 		return;
-	for (int i = 0;i < _y + y ; i++)
+	for (int i = 0; i < _y + y && i < imj->getY(); i++)
 	{
-		for (int j = 0; j < _x + x; j++) {
+		for (int j = 0; j < _x + x && j < imj->getY(); j++) {
 			setColor(j + x, i + y, imj->getColor(j, i));
 			setSymbol(j + x, i + y, imj->getSymbol(j, i));
 		}

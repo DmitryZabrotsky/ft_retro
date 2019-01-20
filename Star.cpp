@@ -12,7 +12,6 @@ void Star::appear(Map const &map) {
 }
 
 void Star::beahavior(Map const &map) {
-//	setX(getX() + getSpeed());
 	setY(getY() + getSpeed());
 }
 
