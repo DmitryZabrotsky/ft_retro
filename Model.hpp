@@ -12,15 +12,16 @@
 
 class Model {
 private:
-	Control *control;
-	View *view;
-	Background *background;
+	Control *_control;
+	View *_view;
+	Background _background;
 
 public:
 	Model();
 	Model(Model const &obj);
 	~Model();
 	Model &operator=(Model const &onj);
+	void simulation();
 };
 
 

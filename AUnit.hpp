@@ -34,6 +34,7 @@ public:
 
 	virtual void appear(Map const &map) = 0;
 	virtual void beahavior(Map const &map) = 0;
+//	virtual void collision(Map const &map) = 0;
 	virtual void play(Map const &map) = 0;
 };
 

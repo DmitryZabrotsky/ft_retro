@@ -21,5 +21,5 @@ Background &Background::operator=(Background const &obj) {
 }
 
 void Background::Mapping(Map &obj) {
-	
+
 }
