@@ -45,6 +45,10 @@ Hero *Model::getHero() const {
 }
 
 void Model::heroManipulate(Map &map) {
+	if (_hero->getHP() <= 0) {
+		_view->gameover();
+		_control->gameover();
+	}
 	if (_hero->getX() < 0 || _hero->getY() < 0)
 		_hero->appear(map);
 	_hero->play(map);

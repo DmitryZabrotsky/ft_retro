@@ -122,3 +122,29 @@ int View::get_y_wmax() {return (this->y_wmax);}
 WINDOW *View::getWin() const {
 	return _win;
 }
+
+void View::gameover() {
+	werase(_win);
+
+	int y = this->y_wmax - (this->y_wmax / 2);
+	int x = this->x_wmax - (this->x_wmax / 2);
+
+	int x1 = 0;
+	int y1 = 0;
+	while (y1 < this->y_wmax)
+	{
+		x1 = 0;
+		while(x1 < this->x_wmax)
+		{
+			mvwprintw(_win, y1, x1, "%c", ' ');
+			x1++;
+		}
+		y1++;
+	}
+
+	mvwprintw(_win, y, x - 35, "01000111 01000001 01001101 01000101  01001111 01010110 01000101 01010010");
+	y += 2;
+	mvwprintw(_win, y, x - 35, "    G        A        M        E         O        V        E        R");
+	y += 4;
+	mvwprintw(_win, y, x - 10, "press 'Q' for EXIT" );
+};
