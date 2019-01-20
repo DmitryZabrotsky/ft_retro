@@ -47,10 +47,17 @@ View::View() {
 	wattron(_win, COLOR_PAIR(133));
 	//wborder(_win, 42, 42, 42, 42, 42, 42, 42, 42);
 	wrefresh(_win);
+
+	_start = time (NULL);
+
+	draw_panel();
+	
 }
 
 void	View::draw_panel()
 {
+	time_t now = time (NULL) - _start;
+
 	wattron(_win, COLOR_PAIR(133));
 
 	mvwprintw(_win, 0, this->x_wmax - 17, "~~~~~~Score~~~~~~");
@@ -58,6 +65,12 @@ void	View::draw_panel()
 	mvwvline(_win, 1, this->x_wmax - 1, '*', 2);
 
 	mvwprintw(_win, 3, this->x_wmax - 17, "~~~~~~~~~~~~~~~~~");
+
+	mvwprintw(_win, 4, this->x_wmax - 17, "~~~~~~Timer~~~~~~");
+	mvwvline(_win, 5, this->x_wmax - 17, '*', 2);
+	mvwvline(_win, 5, this->x_wmax - 1, '*', 2);
+	mvwprintw (_win, 6, this->x_wmax - 15, "%02d:%02d", now / 60 , now % 60);
+	mvwprintw(_win, 7, this->x_wmax - 17, "~~~~~~~~~~~~~~~~~");
 
 }
 

@@ -15,6 +15,8 @@ private:
 	WINDOW *_win;
 	int x_wmax;
 	int y_wmax;
+	time_t _start;
+
 	void		draw_panel();
 
 public:
