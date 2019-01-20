@@ -8,12 +8,14 @@
 #define ENTRY_HPP
 
 #include <iostream>
+#include "AUnit.hpp"
 
 class Entry {
 
 private:
 	int		_color;
 	char	_symbol;
+	AUnit	*_owner;
 
 public:
 	Entry();
@@ -21,6 +23,18 @@ public:
 	~Entry();
 
 	Entry &operator = (Entry const &obj);
+
+	int get_color() const;
+
+	char get_symbol() const;
+
+	AUnit *get_owner() const;
+
+	void set_color(int _color);
+
+	void set_symbol(char _symbol);
+
+	void set_owner(AUnit *_owner);
 
 };
 

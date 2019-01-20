@@ -15,3 +15,27 @@ Entry &Entry::operator = (Entry const &obj) {
 }
 
 Entry::~Entry() {}
+
+int Entry::get_color() const {
+	return _color;
+}
+
+char Entry::get_symbol() const {
+	return _symbol;
+}
+
+AUnit *Entry::get_owner() const {
+	return _owner;
+}
+
+void Entry::set_color(int _color) {
+	Entry::_color = _color;
+}
+
+void Entry::set_symbol(char _symbol) {
+	Entry::_symbol = _symbol;
+}
+
+void Entry::set_owner(AUnit *_owner) {
+	Entry::_owner = _owner;
+}

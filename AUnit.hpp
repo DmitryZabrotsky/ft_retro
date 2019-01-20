@@ -24,11 +24,11 @@ public:
  	int getSpeed() const;
 	void setSpeed(int speed); 
 	void setHP(int hp);
-	int getX();
-	int getY();
+	int getX() const;
+	int getY() const;
 	void setX(int x);
 	void setY(int y);
-	Map &getImj();
+	Map &getImj() const;
 };
 
 #endif AUNIT_HPP

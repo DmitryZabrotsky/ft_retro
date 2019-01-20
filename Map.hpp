@@ -21,9 +21,13 @@ public:
 	Map(int x, int y);
 	Map(Map const &obj);
 	~Map();
-
+	int getX() const;
+	int getY() const;
+	void setSymbol(int x, int y, char symbol);
+	void setColor(int x, int y, int color);
+	void setOwner(int x, int y, AUnit *owner)
 	Map &operator=(Map const &obj);
-
+	void add(Map const &imj, int x, int y);
 };
 
 
