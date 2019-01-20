@@ -22,7 +22,7 @@ void Star::play(Map const &map) {
 		appear(map);
 }
 
-Star::Star() : AUnit(0, 1) {
+Star::Star() : AUnit(0, 1, 0) {
 	Map *imj = new Map(__i_len, __i_hight);
 	for (int i = 0; i < __i_hight; i++)
 	{
@@ -34,13 +34,13 @@ Star::Star() : AUnit(0, 1) {
 		}
 	}
 	set_imj(imj);
-//	printStar();
 }
 
-void Star::printStar() {
-	for (int i = 0; i < getImj()->getY(); i++) {
-		for (int j = 0; j < getImj()->getX(); j++)
-			std::cout << '.';
-		std::cout << std::endl;
-	}
+void Star::collision(Map const &map) {
+	(void)map;
 }
+
+void Star::damage(AUnit *unit) {
+	(void)unit;
+}
+

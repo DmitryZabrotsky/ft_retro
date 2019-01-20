@@ -20,8 +20,8 @@ public:
 	virtual void appear(Map const &map);
 	virtual void beahavior(Map const &map);
 	virtual void play(Map const &map);
-	void printStar();
-
+	void collision(Map const &map);
+	void damage(AUnit *unit);
 };
 
 
