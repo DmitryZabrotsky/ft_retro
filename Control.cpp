@@ -50,6 +50,7 @@ void Control::userEvent(Map const &map) {
 			break;
 		case 'q':
 			delete _view;
+			system("reset");
 			exit(0);
 		default:
 			break;

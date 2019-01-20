@@ -19,8 +19,8 @@ private:
 	Control *_control;
 	View *_view;
 	Hero *_hero;
-	Background _background;
-	Level _level;
+	Background *_background;
+	Level *_level;
 
 	void heroManipulate(Map &map);
 

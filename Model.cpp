@@ -7,11 +7,10 @@
 
 Model::Model() {
 	std::cout << "model\n";
-	_background = Background();
-	_level = Level();
+	_background =  new Background();
+	_level = new Level();
 	_hero = new Hero();
 	_totalScore = 0;
-	_control = new Control(this, _view);
 	_view = new View(this);
 	_control = new Control(this, _view);
 
@@ -24,6 +23,9 @@ Model::Model(Model const &obj) {
 
 Model::~Model() {
 	delete(_view);
+	delete(_control);
+	delete(_hero);
+	delete(_level);
 }
 
 Model &Model::operator=(Model const &onj) {
@@ -34,11 +36,11 @@ void Model::simulation() {
 	while (42) {
 		Map map = Map(_view->get_x_wmax(), _view->get_y_wmax());
 		 // Map map = Map(20, 20);
-		_background.play(map);
-		_background.mapping(map);
-		_totalScore = _level.getScore();
-		_level.play(map);
-		_level.mapping(map);
+		_background->play(map);
+		_background->mapping(map);
+		_totalScore = _level->getScore();
+		_level->play(map);
+		_level->mapping(map);
 		heroManipulate(map);
 		_view->printmap(map);
 	}

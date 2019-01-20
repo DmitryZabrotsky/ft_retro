@@ -8,7 +8,7 @@
 Map::Map(int x, int y) : _x(x), _y(y) {
 	_map = new Entry*[y];
 	for (int i = 0; i < y; i++)
-		_map[i] = new Entry[x]();
+		_map[i] = new Entry[x];
 }
 
 Map::Map(Map const &obj) {
@@ -16,26 +16,17 @@ Map::Map(Map const &obj) {
 }
 
 Map &Map::operator=(Map const &obj) {
-//	for (int i = 0; i < _y; i++)
-//		delete _map[i];
-//	delete _map;
 	this->_x = obj._x;
 	this->_y = obj._y;
-//	_map = new Entry*[_y];
-//	for (int i = 0; i < _y; i++) {
-//		_map[i] = new Entry[_x]();
-//		for (int j = 0; j < _y; j++)
-//			_map[i][j] = obj._map[i][j];
-//	}
 	return (*this);
 }
 
 Map::Map() {}
 
 Map::~Map() {
-//	for (int i = 0; i < _y; i++)
-//		delete _map[i];
-//	delete _map;
+//	for (int i = 0; i < _y - 1; i++)
+//		delete [] _map[i];
+	delete [] _map;
 }
 
 void Map::add(Map const *imj, int x, int y) {
