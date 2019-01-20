@@ -19,3 +19,7 @@ Background::~Background() {
 Background &Background::operator=(Background const &obj) {
 	return <#initializer#>;
 }
+
+void Background::Mapping(Map &obj) {
+	
+}

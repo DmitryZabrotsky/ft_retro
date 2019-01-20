@@ -10,8 +10,7 @@
 class IScenario {
 
 public:
-	virtual void Mapping(Map &obj);
-
+	virtual void Mapping(Map &obj) = 0;
 };
 
 #endif
