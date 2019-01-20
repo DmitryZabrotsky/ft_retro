@@ -28,7 +28,7 @@ Star::Star() : AUnit(0, 0.15, 0) {
 	{
 		for (int j = 0; j < __i_len; j++)
 		{
-			imj->setColor(j, i, 1);
+			imj->setColor(j, i, 2);
 			imj->setSymbol(j, i, __img[i][j]);
 			imj->setOwner(j, i, this);
 		}

@@ -19,10 +19,10 @@ View::View() {
 	getmaxyx(stdscr, this->y_wmax, this->x_wmax);
 
 	
-	init_pair(1, COLOR_BLUE, COLOR_BLACK);
+	init_pair(1, COLOR_YELLOW, COLOR_BLACK);
 	init_pair(2, COLOR_BLUE, COLOR_BLACK);
-	init_pair(3, COLOR_RED, COLOR_BLACK);
-	init_pair(4, COLOR_CYAN, COLOR_BLACK);
+	init_pair(3, COLOR_CYAN, COLOR_BLACK);
+	init_pair(4, COLOR_RED, COLOR_BLACK);
 	init_pair(5, COLOR_WHITE, COLOR_BLACK);
 	init_pair(6, COLOR_RED, COLOR_RED);
 	init_pair(7, COLOR_CYAN, COLOR_BLACK);
@@ -33,7 +33,7 @@ View::View() {
 	init_pair(44, COLOR_BLACK, COLOR_CYAN);
 	init_pair(55, COLOR_BLACK, COLOR_WHITE);
 
-	init_pair(133, COLOR_BLACK, COLOR_YELLOW);	
+	init_pair(133, COLOR_CYAN, COLOR_BLACK);	
 
 	getmaxyx(stdscr, this->y_wmax, this->x_wmax);
 
@@ -43,7 +43,7 @@ View::View() {
 	nodelay(_win, true);
 //	raw();
 	keypad(_win, true);
-	init_pair(133, COLOR_RED, COLOR_BLUE);
+
 	wattron(_win, COLOR_PAIR(133));
 	//wborder(_win, 42, 42, 42, 42, 42, 42, 42, 42);
 	wrefresh(_win);
