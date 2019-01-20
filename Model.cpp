@@ -9,9 +9,10 @@ Model::Model() {
 	std::cout << "model\n";
 	_background = Background();
 	_level = Level();
+	_hero = new Hero();
 	_view = new View(this);
 	_control = new Control(this, _view);
-	_hero = new Hero();
+
 	srand(time(0));
 }
 

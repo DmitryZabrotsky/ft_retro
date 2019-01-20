@@ -71,7 +71,7 @@ void	View::draw_panel()
 	{
 			//mvwprintw(_win, 2, this->x_wmax - 14, "****TEST**");
 
-		mvwprintw(_win, 2, this->x_wmax - 14,"%d", _model->getHero()->getHP());
+		mvwprintw(_win, 2, this->x_wmax - 14,"HP: %d", _model->getHero()->getHP());
 	}
 	mvwprintw(_win, 3, this->x_wmax - 17, "~~~~~~~~~~~~~~~~~");
 	
