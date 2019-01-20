@@ -47,6 +47,7 @@ void Map::add(Map const *imj, int x, int y) {
 			// std::cout << j << " " << x  << " " << std::endl;
 			setColor(j + x, i + y, imj->getColor(j, i));
 			setSymbol(j + x, i + y, imj->getSymbol(j, i));
+			setOwner(j + x, i + y, imj->getOwner(j, i));
 		}
 	}
 }

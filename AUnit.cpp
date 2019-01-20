@@ -68,9 +68,7 @@ void AUnit::collision(Map const &map) {
     for (int i = 0; i < _imj->getY(); i++) {
         for (int j = 0; j < _imj->getX(); j++) {
             AUnit *target = map.getOwner(j + _x, i + _y);
-            printf("11111");
             if (target != nullptr && target != this) {
-//                exit(1);
                 target->damage(this);
                 damage(target);
                 break;
