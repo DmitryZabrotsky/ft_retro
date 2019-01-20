@@ -8,7 +8,7 @@ AUnit::AUnit() {}
 
 
 AUnit::AUnit(int hp, int speed): _hp(hp), _speed(speed) {
-
+    imj = Map();
 }
 
 int AUnit::getHP() const {
